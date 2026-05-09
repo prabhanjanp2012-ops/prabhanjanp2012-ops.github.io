@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prabhanjan Pandurangi | Digital Transformation & Agentic AI Leader</title>
+  <meta name="description" content="Portfolio website for Prabhanjan Jayathirtha Pandurangi, Senior Leader in Digital Transformation, Agentic AI, Automation and Operational Excellence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #06111f;
+      --bg-2: #0b1830;
+      --card: rgba(255, 255, 255, 0.08);
+      --card-2: rgba(255, 255, 255, 0.13);
+      --stroke: rgba(255, 255, 255, 0.16);
+      --text: #eef6ff;
+      --muted: #a9bad1;
+      --cyan: #3ee7ff;
+      --blue: #5b7cff;
+      --violet: #b463ff;
+      --green: #7dffbf;
+      --amber: #ffd166;
+      --danger: #ff6b8a;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --max: 1220px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 5%, rgba(62, 231, 255, 0.26), transparent 26%),
+        radial-gradient(circle at 85% 10%, rgba(180, 99, 255, 0.24), transparent 28%),
+        radial-gradient(circle at 50% 55%, rgba(91, 124, 255, 0.13), transparent 38%),
+        linear-gradient(135deg, #04101d 0%, #091932 48%, #050915 100%);
+      color: var(--text);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.23;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: radial-gradient(circle at top, black 0%, transparent 75%);
+      z-index: 0;
+    }
+
+    .orb {
+      position: fixed;
+      border-radius: 999px;
+      filter: blur(8px);
+      opacity: 0.72;
+      z-index: 0;
+      pointer-events: none;
+      animation: float 14s ease-in-out infinite alternate;
+    }
+    .orb.one { width: 260px; height: 260px; left: -80px; top: 180px; background: rgba(62, 231, 255, 0.18); }
+    .orb.two { width: 320px; height: 320px; right: -120px; top: 460px; background: rgba(180, 99, 255, 0.18); animation-delay: -4s; }
+    .orb.three { width: 180px; height: 180px; left: 52%; bottom: 10%; background: rgba(125, 255, 191, 0.12); animation-delay: -8s; }
+
+    @keyframes float {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to { transform: translate3d(30px, -45px, 0) scale(1.08); }
+    }
+
+    .container { width: min(var(--max), calc(100% - 42px)); margin: 0 auto; position: relative; z-index: 1; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(3, 10, 20, 0.62);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      text-decoration: none;
+      color: var(--text);
+      min-width: 220px;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--cyan), var(--blue), var(--violet));
+      color: #06111f;
+      font-weight: 900;
+      box-shadow: 0 12px 32px rgba(62, 231, 255, 0.26);
+    }
+
+    .brand span { display: block; font-weight: 800; letter-spacing: -0.03em; }
+    .brand small { color: var(--muted); font-size: 0.76rem; }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .navlinks a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all .25s ease;
+    }
+    .navlinks a:hover { color: var(--text); background: rgba(255,255,255,0.08); }
+    .navlinks .cta {
+      color: #07101f;
+      background: linear-gradient(135deg, var(--cyan), var(--green));
+      box-shadow: 0 14px 28px rgba(62,231,255,.18);
+    }
+    .navlinks .cta:hover { color: #07101f; transform: translateY(-2px); }
+
+    .hero {
+      min-height: calc(100vh - 76px);
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 46px;
+      padding: 82px 0 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border: 1px solid rgba(62, 231, 255, 0.22);
+      border-radius: 999px;
+      background: rgba(62, 231, 255, 0.08);
+      color: #c9faff;
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-bottom: 22px;
+      animation: fadeUp .8s ease both;
+    }
+    .pulse {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 0 rgba(125, 255, 191, 0.8);
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(125,255,191,.55); }
+      70% { box-shadow: 0 0 0 12px rgba(125,255,191,0); }
+      100% { box-shadow: 0 0 0 0 rgba(125,255,191,0); }
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6.8rem);
+      line-height: .89;
+      letter-spacing: -0.075em;
+      margin-bottom: 24px;
+      animation: fadeUp .8s ease .08s both;
+    }
+
+    .gradient-text {
+      background: linear-gradient(100deg, #ffffff 0%, #bff7ff 34%, #9caeff 68%, #e1bdff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p.lead {
+      font-size: clamp(1.05rem, 2.2vw, 1.36rem);
+      line-height: 1.72;
+      color: #c7d5e7;
+      max-width: 720px;
+      margin-bottom: 30px;
+      animation: fadeUp .8s ease .16s both;
+    }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeUp .8s ease .24s both; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 15px 20px;
+      font-weight: 800;
+      transition: all .25s ease;
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .button.primary { color: #06111f; background: linear-gradient(135deg, var(--cyan), var(--green)); box-shadow: 0 18px 44px rgba(62,231,255,.22); }
+    .button.secondary { color: var(--text); background: rgba(255,255,255,.08); }
+    .button:hover { transform: translateY(-4px); }
+
+    .hero-panel {
+      position: relative;
+      min-height: 620px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.045));
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      animation: fadeScale .9s ease .18s both;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(62,231,255,.33), transparent 32%),
+        radial-gradient(circle at 80% 15%, rgba(180,99,255,.28), transparent 28%),
+        radial-gradient(circle at 50% 78%, rgba(125,255,191,.18), transparent 28%);
+      opacity: .85;
+    }
+
+    .profile-card {
+      position: absolute;
+      inset: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 28px;
+      padding: 28px;
+      background: rgba(4, 12, 24, .68);
+      border: 1px solid rgba(255,255,255,.16);
+      backdrop-filter: blur(22px);
+    }
+
+    .avatar-wrap { display: flex; align-items: center; gap: 18px; }
+    .avatar {
+      width: 94px;
+      height: 94px;
+      border-radius: 28px;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      font-weight: 900;
+      color: #06111f;
+      background: conic-gradient(from 140deg, var(--cyan), var(--green), var(--violet), var(--blue), var(--cyan));
+      box-shadow: 0 22px 42px rgba(0,0,0,.34);
+    }
+    .profile-card h2 { font-size: 1.45rem; letter-spacing: -0.04em; margin-bottom: 6px; }
+    .profile-card p { color: var(--muted); line-height: 1.55; }
+
+    .metric-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 26px 0; }
+    .metric {
+      padding: 20px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.075);
+      border: 1px solid rgba(255,255,255,.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .metric::after {
+      content: "";
+      position: absolute;
+      height: 3px;
+      left: 18px;
+      right: 18px;
+      bottom: 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--violet));
+    }
+    .metric b { display: block; font-size: 2.15rem; letter-spacing: -0.06em; margin-bottom: 5px; }
+    .metric span { color: var(--muted); font-size: .88rem; line-height: 1.45; display: block; }
+
+    .tech-orbit {
+      position: relative;
+      min-height: 162px;
+      display: grid;
+      place-items: center;
+      margin-top: 8px;
+    }
+    .ring {
+      position: absolute;
+      width: 142px;
+      height: 142px;
+      border: 1px dashed rgba(255,255,255,.28);
+      border-radius: 999px;
+      animation: spin 18s linear infinite;
+    }
+    .ring.two { width: 218px; height: 218px; animation-duration: 28s; animation-direction: reverse; opacity: .72; }
+    .core {
+      width: 90px;
+      height: 90px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      text-align: center;
+      font-size: .82rem;
+      background: linear-gradient(135deg, rgba(62,231,255,.9), rgba(180,99,255,.88));
+      color: #fff;
+      box-shadow: 0 0 48px rgba(62,231,255,.24);
+    }
+    .chip {
+      position: absolute;
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.13);
+      color: #dcedff;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+    .chip.a { top: 6px; left: 18px; }
+    .chip.b { right: 4px; top: 62px; }
+    .chip.c { bottom: 18px; left: 46px; }
+    .chip.d { right: 44px; bottom: 4px; }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeScale { from { opacity: 0; transform: translateY(28px) scale(.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+    section { padding: 92px 0; position: relative; z-index: 1; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 32px; }
+    .section-kicker { color: var(--cyan); font-weight: 900; text-transform: uppercase; letter-spacing: .18em; font-size: .78rem; margin-bottom: 10px; }
+    h3 { font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1; letter-spacing: -0.06em; }
+    .section-head p { color: var(--muted); max-width: 540px; line-height: 1.65; }
+
+    .glass {
+      background: linear-gradient(145deg, rgba(255,255,255,.105), rgba(255,255,255,.045));
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .about-card { padding: 28px; min-height: 260px; position: relative; overflow: hidden; }
+    .about-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(62,231,255,.14), transparent 36%);
+      pointer-events: none;
+    }
+    .about-card h4, .achievement h4, .skill-card h4 { font-size: 1.28rem; margin-bottom: 14px; letter-spacing: -0.03em; position: relative; }
+    .about-card p { color: #c3d1e4; line-height: 1.78; position: relative; }
+
+    .highlight-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; position: relative; }
+    .highlight-list span {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.09);
+      color: #dbeaff;
+      font-weight: 650;
+      font-size: .92rem;
+    }
+
+    .achievement-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .achievement { padding: 24px; min-height: 260px; transition: transform .25s ease, border-color .25s ease; position: relative; overflow: hidden; }
+    .achievement:hover { transform: translateY(-8px); border-color: rgba(62,231,255,.42); }
+    .icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(62,231,255,.2), rgba(180,99,255,.18));
+      border: 1px solid rgba(255,255,255,.12);
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+    }
+    .achievement p { color: #c4d2e7; line-height: 1.65; font-size: .96rem; }
+
+    .timeline { position: relative; padding: 8px 0 8px 32px; }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(var(--cyan), var(--violet), transparent);
+    }
+    .timeline-item {
+      position: relative;
+      padding: 24px;
+      margin-bottom: 18px;
+      border-radius: 26px;
+      background: rgba(255,255,255,.075);
+      border: 1px solid rgba(255,255,255,.11);
+      transition: transform .25s ease, background .25s ease;
+    }
+    .timeline-item:hover { transform: translateX(8px); background: rgba(255,255,255,.105); }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -32px;
+      top: 32px;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: var(--cyan);
+      box-shadow: 0 0 0 7px rgba(62,231,255,.13), 0 0 24px rgba(62,231,255,.7);
+    }
+    .timeline-top { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 12px; flex-wrap: wrap; }
+    .timeline-top h4 { font-size: 1.18rem; letter-spacing: -0.03em; }
+    .timeline-top span { color: var(--green); font-weight: 800; font-size: .9rem; }
+    .timeline-item p { color: #c6d5e9; line-height: 1.68; }
+
+    .skills-wrap { display: grid; grid-template-columns: .95fr 1.05fr; gap: 18px; }
+    .skill-card { padding: 28px; }
+    .skill-cloud { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tag {
+      padding: 10px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.075);
+      border: 1px solid rgba(255,255,255,.10);
+      color: #d9e9ff;
+      font-weight: 700;
+      font-size: .88rem;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .tag:hover { transform: translateY(-3px); background: rgba(62,231,255,.12); }
+
+    .progress-group { display: grid; gap: 18px; }
+    .bar-label { display: flex; justify-content: space-between; margin-bottom: 9px; color: #d8e7fb; font-weight: 800; }
+    .bar { height: 12px; border-radius: 999px; background: rgba(255,255,255,.08); overflow: hidden; border: 1px solid rgba(255,255,255,.1); }
+    .bar span { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--cyan), var(--blue), var(--violet)); animation: loadbar 1.3s ease both; transform-origin: left; }
+    @keyframes loadbar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    .education-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .edu-card { padding: 24px; }
+    .edu-card h4 { margin-bottom: 14px; font-size: 1.2rem; }
+    .edu-item { padding: 15px 0; border-top: 1px solid rgba(255,255,255,.08); color: #c8d7eb; line-height: 1.55; }
+    .edu-item b { color: var(--text); display: block; margin-bottom: 3px; }
+
+    .contact-card {
+      padding: 42px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .contact-card::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: -120px;
+      width: 340px;
+      height: 340px;
+      border-radius: 999px;
+      background: rgba(62,231,255,.16);
+      filter: blur(2px);
+    }
+    .contact-card h3, .contact-card p, .contact-links { position: relative; z-index: 1; }
+    .contact-card p { color: #c6d5e9; line-height: 1.7; margin-top: 16px; }
+    .contact-links { display: grid; gap: 13px; }
+    .contact-link {
+      color: var(--text);
+      text-decoration: none;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      transition: all .25s ease;
+      font-weight: 750;
+      overflow-wrap: anywhere;
+    }
+    .contact-link:hover { transform: translateY(-3px); background: rgba(255,255,255,.12); }
+
+    footer { padding: 34px 0 48px; color: var(--muted); text-align: center; position: relative; z-index: 1; }
+
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity .75s ease, transform .75s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 980px) {
+      .hero, .about-grid, .skills-wrap, .education-grid, .contact-card { grid-template-columns: 1fr; }
+      .hero { padding-top: 58px; }
+      .hero-panel { min-height: 560px; }
+      .achievement-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-head { display: block; }
+      .section-head p { margin-top: 14px; }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(100% - 26px, var(--max)); }
+      .nav { height: auto; padding: 14px 0; align-items: flex-start; }
+      .navlinks { display: none; }
+      .hero { min-height: auto; }
+      .profile-card { inset: 14px; padding: 20px; }
+      .metric-grid, .highlight-list, .achievement-grid { grid-template-columns: 1fr; }
+      .hero-panel { min-height: 720px; }
+      section { padding: 64px 0; }
+      .contact-card { padding: 26px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+  <div class="orb three"></div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Home">
+        <div class="logo">PP</div>
+        <div>
+          <span>Prabhanjan Pandurangi</span>
+          <small>Digital Transformation | Agentic AI</small>
+        </div>
+      </a>
+      <nav class="navlinks" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#achievements">Impact</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a class="cta" href="mailto:prabhanjanp2012@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="container hero">
+      <div>
+        <div class="eyebrow"><span class="pulse"></span> Senior Leader – Digital Transformation, AI & Operational Excellence</div>
+        <h1><span class="gradient-text">Transforming operations through AI-led change.</span></h1>
+        <p class="lead">
+          I architect and deliver large-scale transformation programs across insurance, banking, manufacturing and retail — combining Lean Six Sigma rigor, AI / Agentic AI solutioning, automation strategy, operating model design and executive stakeholder leadership.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#achievements">Explore Impact →</a>
+          <a class="button secondary" href="mailto:prabhanjanp2012@gmail.com">Start a Conversation</a>
+          <a class="button secondary" href="https://sg.linkedin.com/in/prabhanjan-pandurangi-4920654" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel" aria-label="Profile summary panel">
+        <div class="profile-card">
+          <div>
+            <div class="avatar-wrap">
+              <div class="avatar">PP</div>
+              <div>
+                <h2>Prabhanjan Jayathirtha Pandurangi</h2>
+                <p>Mumbai, India<br/>+91 98200 76580</p>
+              </div>
+            </div>
+
+            <div class="metric-grid">
+              <div class="metric"><b>15+</b><span>Years leading enterprise transformation</span></div>
+              <div class="metric"><b>900+</b><span>FTE savings opportunities identified</span></div>
+              <div class="metric"><b>$1M</b><span>Continuous improvement savings delivered</span></div>
+              <div class="metric"><b>3</b><span>Regions: APAC, North America, EMEA</span></div>
+            </div>
+          </div>
+
+          <div class="tech-orbit" aria-label="Technology orbit visual">
+            <div class="ring"></div>
+            <div class="ring two"></div>
+            <div class="core">AI-Led<br/>Ops</div>
+            <div class="chip a">Agentic AI</div>
+            <div class="chip b">RPA</div>
+            <div class="chip c">Process Mining</div>
+            <div class="chip d">Lean Six Sigma</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="container reveal">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Executive Profile</div>
+          <h3>Consulting-led transformation with practical execution.</h3>
+        </div>
+        <p>Built for complex operations where business value, governance, adoption and technology feasibility must come together.</p>
+      </div>
+
+      <div class="about-grid">
+        <article class="glass about-card">
+          <h4>About Me</h4>
+          <p>
+            Transformation leader with deep experience designing and delivering large-scale change, digital transformation, automation and operational excellence programs. I bring a consulting-led approach to assess opportunities, design roadmaps, mobilize teams and deliver measurable enterprise outcomes.
+          </p>
+          <div class="highlight-list">
+            <span>Insurance transformation</span>
+            <span>Banking operations</span>
+            <span>Operating model design</span>
+            <span>Executive governance</span>
+          </div>
+        </article>
+        <article class="glass about-card">
+          <h4>Leadership Signature</h4>
+          <p>
+            My work blends AI and automation strategy, Lean Six Sigma, process redesign, data-led diagnostics and stakeholder alignment. I focus on solutions that are not only innovative, but implementable, governed and anchored to productivity, customer experience and risk outcomes.
+          </p>
+          <div class="highlight-list">
+            <span>GenAI & Agentic AI</span>
+            <span>RPA & digital workbench</span>
+            <span>Analytics & dashboards</span>
+            <span>Change management</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="achievements" class="container reveal">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Selected Impact</div>
+          <h3>High-value outcomes across AI, automation and operational excellence.</h3>
+        </div>
+        <p>Representative achievements across insurance, banking, shared services and enterprise transformation programs.</p>
+      </div>
+
+      <div class="achievement-grid">
+        <article class="glass achievement">
+          <div class="icon">🤖</div>
+          <h4>Digital Claims Workbench</h4>
+          <p>Designed and implemented an Agentic AI claims workbench using multi-agent collaboration and human-in-the-loop controls, supporting end-to-end insurance claims from FNOL to closure.</p>
+        </article>
+        <article class="glass achievement">
+          <div class="icon">📈</div>
+          <h4>900+ FTE Opportunity</h4>
+          <p>Identified major productivity opportunities across two large Australia and New Zealand insurance accounts using an in-house digital maturity assessment framework.</p>
+        </article>
+        <article class="glass achievement">
+          <div class="icon">🏦</div>
+          <h4>Wealth Operations Redesign</h4>
+          <p>Redesigned client onboarding and static data maintenance operating models for a leading wealth management bank, delivering 15 FTE savings.</p>
+        </article>
+        <article class="glass achievement">
+          <div class="icon">🛡️</div>
+          <h4>Delivery Assurance</h4>
+          <p>Built operational, financial, regulatory and customer-experience risk reporting frameworks, improving account-level visibility and timely intervention.</p>
+        </article>
+        <article class="glass achievement">
+          <div class="icon">💎</div>
+          <h4>$1M CI Savings</h4>
+          <p>Delivered high-impact continuous improvement initiatives over three years at Integreon, contributing $1M in savings across strategic accounts.</p>
+        </article>
+        <article class="glass achievement">
+          <div class="icon">⭐</div>
+          <h4>Customer Experience Lift</h4>
+          <p>Designed and implemented CSAT and NPS survey programs, improving average CSAT by 30 basis points and NPS by 5% year on year.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="container reveal">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Career Journey</div>
+          <h3>Leadership across digital operations, consulting and delivery excellence.</h3>
+        </div>
+        <p>A progression from quality and continuous improvement to enterprise-scale AI-led transformation and insurance digital strategy.</p>
+      </div>
+
+      <div class="glass" style="padding: 26px;">
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-top"><h4>WNS – Capgemini | Senior Director – Digital Transformation, Insurance</h4><span>Aug 2024 – Present</span></div>
+            <p>Leading digital transformation programs for major insurance clients in Australia and New Zealand, designing solution ecosystems that combine third-party and in-house applications across sales support, claims and customer service operations.</p>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-top"><h4>Cognizant Technology Solutions | Associate Director – Digital Operations</h4><span>Jul 2019 – Aug 2023</span></div>
+            <p>Managed automation and RPA engagements across ASEAN; led consultants, analysts, architects and developers across India, Singapore, Philippines and Malaysia; built go-to-market capabilities and automation CoE programs.</p>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-top"><h4>Tata Consultancy Services | Program Manager – Consulting Services Delivery</h4><span>May 2017 – Dec 2018</span></div>
+            <p>Provided thought leadership for wealth management operations in Singapore and Hong Kong, focusing on operating model changes, RPA, process redesign, control improvements and platform transition readiness.</p>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-top"><h4>Tata Consultancy Services | AVP – Delivery Excellence & Risk Management</h4><span>Jul 2011 – May 2017</span></div>
+            <p>Led delivery excellence and risk management for BPO accounts, institutionalized assurance frameworks and digitized weekly risk identification and KPI reporting for leadership.</p>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-top"><h4>Integreon | Head – Continuous Improvement</h4><span>Mar 2006 – Jun 2011</span></div>
+            <p>Implemented operational performance measurement systems, Six Sigma project selection processes, dashboard reporting, certification guidelines and executive governance models.</p>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-top"><h4>Earlier Quality Leadership Roles | Tracmail & WNS Global Services</h4><span>2003 – 2006</span></div>
+            <p>Built strong foundations in quality, process excellence, metrics management and operational improvement across service delivery environments.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="container reveal">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Capabilities</div>
+          <h3>Where strategy, operations and emerging technology intersect.</h3>
+        </div>
+        <p>Core strengths mapped across AI-led solutioning, enterprise transformation, operational excellence, governance and domain depth.</p>
+      </div>
+
+      <div class="skills-wrap">
+        <article class="glass skill-card">
+          <h4>Core Skill Cloud</h4>
+          <div class="skill-cloud">
+            <span class="tag">Agentic AI</span><span class="tag">Generative AI</span><span class="tag">RPA</span><span class="tag">BPM</span><span class="tag">Process Mining</span><span class="tag">Text Analytics</span><span class="tag">Data Quality</span><span class="tag">Data Governance</span><span class="tag">KPI Design</span><span class="tag">Operating Model Design</span><span class="tag">Change Management</span><span class="tag">Design Thinking</span><span class="tag">Pre-sales</span><span class="tag">Solutioning</span><span class="tag">Agile / Scrum</span><span class="tag">Lean Six Sigma</span>
+          </div>
+        </article>
+        <article class="glass skill-card">
+          <h4>Leadership Strengths</h4>
+          <div class="progress-group">
+            <div><div class="bar-label"><span>Transformation Strategy</span><span>95%</span></div><div class="bar"><span style="width:95%"></span></div></div>
+            <div><div class="bar-label"><span>AI & Automation Solutioning</span><span>92%</span></div><div class="bar"><span style="width:92%"></span></div></div>
+            <div><div class="bar-label"><span>Operational Excellence</span><span>96%</span></div><div class="bar"><span style="width:96%"></span></div></div>
+            <div><div class="bar-label"><span>Executive Stakeholder Management</span><span>94%</span></div><div class="bar"><span style="width:94%"></span></div></div>
+            <div><div class="bar-label"><span>Insurance & BFS Operations</span><span>91%</span></div><div class="bar"><span style="width:91%"></span></div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="container reveal">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">Education & Certifications</div>
+          <h3>Continuous learning across AI, digital business and excellence.</h3>
+        </div>
+        <p>Formal education, professional credentials and specialized certifications supporting transformation leadership.</p>
+      </div>
+
+      <div class="education-grid">
+        <article class="glass edu-card">
+          <h4>Education</h4>
+          <div class="edu-item"><b>AI Accelerator – AI Generalist</b>Be10X | 2025–26</div>
+          <div class="edu-item"><b>Post Graduate Diploma in Digital Business</b>Emeritus MIT Sloan | 2018–19</div>
+          <div class="edu-item"><b>MBA in Marketing Management</b>Mumbai University | 2003–06</div>
+        </article>
+        <article class="glass edu-card">
+          <h4>Selected Certifications</h4>
+          <div class="edu-item"><b>Generative AI Fundamentals</b>Databricks | 2023</div>
+          <div class="edu-item"><b>Collibra Data Quality & Data Governance</b>2023</div>
+          <div class="edu-item"><b>Process Mining</b>Celonis / UiPath Process Gold | 2020</div>
+          <div class="edu-item"><b>Design Thinking, Agile & Scrum, Master Black Belt</b>2010–2017</div>
+          <div class="edu-item"><b>Internal Auditor</b>ISO 9001 / 27001 | 2008</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="container reveal">
+      <div class="glass contact-card">
+        <div>
+          <div class="section-kicker">Let’s Connect</div>
+          <h3>Ready to shape the next wave of AI-led operational transformation.</h3>
+          <p>Available for leadership conversations across digital transformation strategy, insurance operations modernization, Agentic AI solution design, automation CoE, operational excellence and enterprise delivery governance.</p>
+        </div>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:prabhanjanp2012@gmail.com">✉️ prabhanjanp2012@gmail.com</a>
+          <a class="contact-link" href="tel:+919820076580">📞 +91 98200 76580</a>
+          <a class="contact-link" href="https://sg.linkedin.com/in/prabhanjan-pandurangi-4920654" target="_blank" rel="noreferrer">🔗 LinkedIn Profile</a>
+          <div class="contact-link">📍 Mumbai, India</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Prabhanjan Pandurangi. Designed as a single-file executive portfolio.</div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.13 });
+    reveals.forEach(el => observer.observe(el));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const panel = document.querySelector('.hero-panel');
+    if (panel && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      panel.addEventListener('mousemove', (e) => {
+        const rect = panel.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const rx = ((y / rect.height) - 0.5) * -8;
+        const ry = ((x / rect.width) - 0.5) * 8;
+        panel.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+      });
+      panel.addEventListener('mouseleave', () => {
+        panel.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg)';
+      });
+    }
+  </script>
+</body>
+</html>
